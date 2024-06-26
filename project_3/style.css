@@ -1,52 +1,132 @@
-* {
-    box-sizing: border-box;
-}
+    * {
+        box-sizing: border-box;
+    }
 
-body {
-    font-family: 'Courier New', Courier, monospace;
-    background-color: #333;
-    color: #222;
-    overflow-x: hidden;
-    margin: 0;
-}
-.container {
-    background-color: #fafafa;
-    transform-origin: top left;
-    transition: tranform 0.5s linear;
-}
+    body {
+        font-family: 'Courier New', Courier, monospace;
+        background-color: #333;
+        color: #222;
+        overflow-x: hidden;
+        margin: 0;
+    }
 
-.container.show-nav {
-    transform: rotate(-20deg);
-}
-img  {
-    /* width: 100%; Chiều rộng của hình ảnh */
-    max-height: 300px; /* Giữ tỷ lệ của hình ảnh */
-    border: 2px solid #000; /* Viền đen 2px */
-    border-radius: 10px; /* Bo góc */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Đổ bóng */
-}
-.circle-container {
-    position: fixed;
-    top: -100px;
-    left: -100px;
-}
+    .container {
+        background-color: #fafafa;
+        transform-origin: top left;
+        transition: transform 0.5s linear;
+        width: 100vw;
+        min-height: 100vh;
+        padding: 50px;
+    }
 
-.circle {
-    background-color: #ff7979;
-    height: 200px;
-    width: 200px;
-    border-radius: 50%;
-    position: relative;
-    transform:  0.5s linear;
-}
+    .container.show-nav {
+        transform: rotate(-20deg);
+    }
 
-.circle button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    height: 100px;
-    background: transparents;
-    border: 0;
-    font-size: 26px;
-    color: #fff;
-}
+    img {
+        width: 100%;
+        /* Chiều rộng của hình ảnh */
+        max-height: 300px;
+        /* Giữ tỷ lệ của hình ảnh */
+        border: 2px solid #000;
+        /* Viền đen 2px */
+        border-radius: 10px;
+        /* Bo góc */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        /* Đổ bóng */
+    }
+
+    .circle-container {
+        position: fixed;
+        top: -80px;
+        left: -80px;
+    }
+
+    .circle {
+        background-color: #ff7979;
+        height: 180px;
+        width: 180px;
+        border-radius: 50%;
+        position: relative;
+        transition: transform 0.5s linear;
+    }
+
+    .container.container.show-nav .circle {
+        transform: rotate(-70deg);
+    }
+
+    .circle button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 50px;
+        background: transparent;
+        border: 0;
+        font-size: 26px;
+        color: red;
+    }
+
+    .circle button:focus {
+        outline: none;
+    }
+
+    .circle button#open {
+        left: 60%;
+    }
+
+    .circle button#close {
+        top: 60%;
+        transform: rotate(90deg);
+        transform-origin: top left;
+    }
+
+    .content {
+        max-width: 1000px;
+        margin: 50px auto;
+    }
+
+    .content h1 {
+        margin: 0;
+    }
+
+    .content small {
+        color: #555;
+        font-size: initial;
+    }
+
+    .content p {
+        color: #333;
+        line-height: 1.5;
+    }
+
+    .nav {
+        position: fixed;
+        bottom: 40px;
+        left: 0;
+        z-index: 100;
+    }
+
+    .nav ul {
+        list-style-type: none;
+        padding-left: 30px;
+    }
+
+    .nav ul li {
+        color: #fff;
+        margin: 40px 0;
+        transition: transform o.4s ease-in;
+        margin-right: 15px;
+    }
+
+    .nav ul li i {
+        font-size: 16px;
+        margin-right: 10px;
+    }
+
+    .nav ul li+li {
+        margin-right: 15px;
+    }
+
+    .nav ul li+li+li {
+        margin-right: 30px;
+    }
