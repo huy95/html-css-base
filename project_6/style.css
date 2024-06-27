@@ -1,0 +1,35 @@
+body {
+    background-color: #efedd6;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
+h1 {
+    margin: 10px;   
+}
+
+.box {
+    background-color: steelblue;
+    color: wheat;
+    display: flex;
+    width: 400px;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 2px 4px 5px rgb(red, green, blue);
+    transform: translateX(200%);
+    transition: transform 0.4s ease;
+}
+
+.box:nth-of-type(even) {
+    transform: translateX(-200%);
+}
+
+.box.show {
+    transform: translateX(0);
+}
