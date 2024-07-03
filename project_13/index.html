@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Choice Picker</title>
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    textarea {
+        width: 100%;
+        height: 100px;
+        display: block;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    .tags {
+        padding: 20px;
+        margin: 0 0 20px;
+    }
+
+    .tag {
+        background-color: chocolate;
+        padding: 10px;
+        border: 0;
+        border-radius: 10px;
+        margin-right: 10px;
+    }
+
+    .tag.hightLight {
+        background-color: blue;
+        padding: 10px;
+        border: 0;
+        border-radius: 10px;
+        margin-right: 10px; 
+    } 
+</style>
+
+<body>
+    <div class="container">
+        <h3>
+            Enter all of the choices divided bt comma (',').
+            <br> Press enter when you're done
+        </h3>
+
+        <textarea placeholder="Enter choices here ..." id="textarea"></textarea>
+
+        <div id="tags">
+            <span class="tag">Choice 1</span>
+            <span class="tag hightLight">Choice 2</span>
+        </div>
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>
