@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex; /* khi để flex nó sẽ ngang hết nếu muốn dọc phai để flex-direction*/
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        background-color: #8e44ad;
+        margin: 0;
+        position: relative;
+        color: #fff;
+    }
+
+    .container-social {
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+        text-align: center;
+    }
+    .number {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    @media (max-width: 580px) {
+        body {
+            flex-direction: column;
+        }
+    }
+</style>
+
+<body>
+    <div class="container-social">
+        <i class="fab fa-twitter fa-3x"></i>
+        <div class="number" data-target="12000">120000</div>
+        <span class="social">Twitter flollowers</span>
+    </div>
+    <div class="container-social">
+        <i class="fab fa-youtube fa-3x"></i>
+        <div class="number" data-target="5000">
+            5000
+        </div>
+        <span class="social">Youtube Subcribers</span>
+    </div>
+    <div class="container-social">
+        <i class="fab fa-facebook fa-3x"></i>
+        <div class="number" data-target="7500">7500</div>
+        <span class="social">Facebook Fans</span>
+
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
