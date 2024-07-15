@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<style>
+    body {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+        justify-content: center;
+        /* background-image: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg'); */
+    
+        background-position: center center;
+        background-size: cover;
+        transition:  0.4s;
+    }
+    body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+
+    .slider-container {
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.6), 0 3px 6px rgba(0, 0, 0, 0.23);
+        height: 70vh;
+        width: 70vh;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .slide {
+        opacity: 0;
+        height: 100vh;
+        width: 100vw;
+        background-position: center center;
+        background-size: cover;
+        position: absolute;
+        top: -15vh;
+        left: -15vw;
+        transition: 0.4s ease;
+        z-index: 1;
+    }
+
+    .slide.active {
+        opacity: 1;
+    }
+
+    .arrow {
+        position: fixed;
+        background-color: transparent;
+        padding: 20px;
+        font-size: 30px;
+        border: 2px solid orange;
+        top: 50%;
+        transform:  translateY(-50%);
+        z-index: 100;
+        color: white;
+    }
+
+    .left-arrow {
+        left: calc(15vw - 65px);
+    }
+
+    .right-arrow {
+        right: calc(15vw - 65px);
+    }
+
+
+
+</style>
+
+<body>
+    <div class="slider-container">
+        <div class="slide active"
+            style="background-image: url('https://static.vecteezy.com/system/resources/thumbnails/006/240/302/small_2x/abstract-soft-focus-sunset-field-landscape-of-yellow-flowers-and-grass-meadow-warm-golden-hour-sunset-sunrise-time-tranquil-spring-summer-nature-closeup-and-blurred-forest-background-idyllic-nature-photo.jpg');">
+        </div>
+        <div class="slide"
+            style="background-image: url('https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg');">
+        </div>
+        <div class="slide"
+            style="background-image: url('https://t4.ftcdn.net/jpg/05/18/41/91/360_F_518419158_yXXBww2r5Z3XoutBxRX8KHNZOpPjhC03.jpg');">
+        </div>
+    </div>
+    <button class="arrow left-arrow" id="left">
+        <i class="fas fa-arrow-left"></i>
+    </button>
+    <button class="arrow right-arrow" id="right">
+        <i class="fas fa-arrow-right" ></i>
+
+    </button>
+
+</body>
+<script src="script.js"></script>
+
+</html>
