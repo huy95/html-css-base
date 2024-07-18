@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag N Drop</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            overflow: hidden;
+            margin: 0;
+            background-color: yellow;
+        }
+
+        .empty {
+            height: 100px;
+            width: 100px;
+            background-color: aliceblue;
+            margin-left: 50px;
+            border: solid 3px blue;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .fill {
+            background-image: url('https://letsenhance.io/static/73136da51c245e80edc6ccfe44888a99/1015f/MainBefore.jpg');
+            height: 100px;
+            width: 100px;
+            background-size: cover;
+            cursor: pointer;
+        }
+
+        .hold {
+            border: solid 5px #ccc;
+        }
+
+        .invisible {
+            display: none;
+        }
+
+        @media (max-width: 800px) {
+            body {
+                flex-direction: column;
+            }
+            .empty {
+                margin-bottom: 20px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="empty"><div class="fill" draggable="true"></div></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+    <div class="empty"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
