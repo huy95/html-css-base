@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body {
+        color: #222;
+        padding-bottom: 50px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .hero {
+        background-image: url('https://www.reuters.com/resizer/v2/V726YEFREZMQFMM5ME3ICFIA5M.jpg?auth=7ee5c4c5faf7686f579e5f4ecfa89c8743d2a8df468a05724a7bfbb2f9adfd04&width=1200');
+        background-repeat: no-repeat;
+        background-color: cover;
+        background-position: bottom center;
+        height: 100vh;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: -2;
+    }
+
+    .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    .hero p {
+        font-size: 20px;
+        letter-spacing: 1px;
+    }
+
+    .content h3 {
+        font-size: 150%;
+        margin: 10px 0;
+    }
+
+    .content p {
+        color: #555;
+        line-height: 30px;
+        letter-spacing: 1.2px;
+    }
+
+    .nav {
+        position: fixed;
+        background-color: #222;
+        top: 0;
+        right: 0;
+        left: 0;
+        transform: all 0.3s ease-in-out;
+    }
+
+    .nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+    }
+
+    .nav ul {
+        display: flex;
+        list-style-type: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .nav a {
+        color: white;
+        text-decoration: none;
+        padding: 7px 15px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .nav.active a {
+        color: white;
+    }
+
+    .nav.active .container {
+        padding: 10px 0;
+        color: black;
+        background-color: white;
+    }
+
+    .nav a.current,
+    .nav a:hover {
+        color: #c0392b;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <nav class="nav active">
+        <div class="container">
+            <h1 class="logo">
+                <a href="/index.html"></a> My Website
+            </h1>
+            <ul>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Welcome To My Website</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit.</p>
+        </div>
+    </div>
+    <section class="container content">
+        <h2>Content One</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic, incidunt excepturi et quo fugit, voluptas
+            exercitationem nihil quis blanditiis alias beatae corrupti labore, impedit cum omnis nam eligendi dolor.
+            Delectus amet veniam totam exercitationem molestias voluptas voluptatibus unde odio, illum nisi ut eius
+            magnam. Expedita, alias laudantium! Aliquid praesentium labore enim cupiditate accusantium vero a, minus
+            molestiae deserunt magnam ab, officia iure voluptatibus natus excepturi dignissimos eum accusamus dolorum ut
+            dicta! Deserunt harum fuga excepturi ea nulla. Exercitationem voluptas eaque, voluptatibus dolor repudiandae
+            nisi reprehenderit repellat dolores vitae? Odio eaque consectetur expedita excepturi animi nisi porro nihil
+            ullam pariatur doloribus.</p>
+        <h3>Content Two</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Neque error aspernatur eveniet? Ipsam dolor fugit
+            asperiores aliquam nulla quasi eum officiis pariatur, magnam, consequatur cumque sunt quisquam animi. Vel
+            sunt labore pariatur. Soluta quo reiciendis saepe illum, sunt ratione ducimus unde veritatis. Consequatur
+            nihil modi accusamus architecto doloremque molestiae, rerum consectetur necessitatibus? Iusto libero
+            deserunt ab maxime aut doloremque illum ipsum, nulla, voluptates consequatur eos eligendi unde ratione
+            cumque provident odio obcaecati quos quia tenetur hic laudantium nobis recusandae nam? Rerum velit error
+            quae nostrum illum molestiae magnam voluptas veritatis!</p>
+    </section>
+
+</body>
+<script src="script.js">
+
+</script>
+
+</html>
