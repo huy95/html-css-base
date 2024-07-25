@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,18 +25,41 @@
 
     .kinetic::after,
     .kinetic::before {
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
         width: 0;
         height: 0;
         border: 50px solid transparent;
-        border-top-color: #fff;
-        border-bottom-color: #fff;
+        border-bottom-color: white;
+        animation: rotateA 2s linear infinite 0.5s;
+    }
+
+    .kinetic::before {
+        transform: rotate(90deg);
+    }
+
+    @keyframes rotateA {
+
+        0%,
+        25% {
+            transform: rotate(0deg);
+        }
+
+        50%,
+        75% {
+            transform: rotate(180deg);
+        }
+
+        100% {
+            transform: rotate(360deg);
+        }
     }
 </style>
+
 <body>
-    <h1>Project Starter</h1>
     <div class="kinetic"></div>
 </body>
+
 </html>
