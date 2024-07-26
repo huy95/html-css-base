@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        height: 100vh;
+        width: 100%;
+    }
+
+    .slider-container {
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+        position: relative;
+    }
+
+    .left-slide {
+        height: 100%;
+        width: 35%;
+        background-color: cadetblue;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform 0.6s linear, opacity 0.6s linear;
+    }
+
+    .left-slide>div {
+        height: 100%;
+        width: 100%;
+    }
+
+    .right-slide {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 35%;
+        width: 65%;
+        transition: transform 0.6s linear, opacity 0.6s linear;
+    }
+
+    .right-slide>div {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 100%;
+        width: 100%;
+    }
+
+    .slider-container .action-buttons button {
+        position: absolute;
+        left: 35%;
+        top: 50%;
+        z-index: 100;
+    }
+
+    .slider-container .action-buttons .down-button {
+        transform: translateX(-100%);
+    }
+
+    .slider-container .action-buttons .up-button {
+        transform: translateY(-100%);
+    }
+
+    button {
+        background-color: white;
+        border: none;
+        color: #aaa;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    button:hover {
+        color: #222;
+    }
+
+    button:focus {
+        outline: none;
+    }
+</style>
+
+<body>
+    <div class='slider-container'>
+        <div class="left-slide">
+            <div style="background-color: bisque;">ảnh 1</div>
+            <div style="background-color: blue;">ảnh 2</div>
+            <div style="background-color: saddlebrown">ảnh3</div>
+        </div>
+        <div class="right-slide">
+            <div style="background-image: url('https://cdn.pixabay.com/photo/2018/07/25/16/00/art-3561710_640.jpg');">
+            </div>
+            <div
+                style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQGwVd07rcBUxKVqf17F_Li5fy-a_zni7JuEQ&s');">
+            </div>
+            <div style="background-color: steelblue"></div>
+        </div>
+        <div class="action-buttons">
+            <button class="down-button">
+                <i class="fas fa-arrow-down"></i>
+            </button>
+            <button class="up-button">
+                <i class="fas fa-arrow-up"></i>
+            </button>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>
