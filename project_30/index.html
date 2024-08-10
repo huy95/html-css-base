@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auto Text Effect</title>
+</head>
+<style>
+    body {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+    }
+
+    div {
+        position: absolute;
+        bottom: 20px;
+        background-color: rgba(0, 0, 0, 0.1);
+        padding: 20px 30px;
+        border-radius: 3px;
+    }
+
+    input {
+        width: 50px;
+        padding: 5px;
+        font-size: 18px;
+        background-color: darkgoldenrod;
+        border: none;
+        text-align: center;
+    }
+
+    input:focus {
+        outline: none;
+    }
+</style>
+
+<body>
+    <h1 id="text">Starting...</h1>
+    <div>
+        <label for="speed">Speed: </label>
+        <input type="number" name="speed" id="speed" value="1" min="1" max="5" step="1">
+    </div>
+</body>
+<script>
+    const textEL = document.getElementById('text')
+    const speedEL = document.getElementById('speed')
+    const text = 'We love programing!'
+    let idx = 1;
+    let speed = 1000
+    writeText();
+    function writeText() {
+        textEL.innerText = text.slice(0, idx)
+
+        idx++
+
+        if (idx > text.length) {
+            idx = 1
+        }
+
+        setTimeout(writeText, speed)
+    }
+    speedEL.addEventListener('input', (e) => speed = 300 / e.target.value)
+</script>
+
+</html>
