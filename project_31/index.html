@@ -71,7 +71,7 @@
     <div class="container">
         <h2>Password Generator</h2>
         <div class="result-container">
-            <span class="result"></span>
+            <span class="result" id="result"></span>
             <button class="btn" id="clipboard">
                 <i class="far fa-clipboard"></i>
             </button>
@@ -84,17 +84,17 @@
 
             <div class="setting">
                 <label>Include uppercase leetters</label>
-                <input type="checkbox" class="uppercase" checked>
+                <input type="checkbox" class="uppercase" id="uppercase" checked>
             </div>
 
             <div class="setting">
                 <label>Include lowercase letters</label>
-                <input type="checkbox" class="uppercase" checked>
+                <input type="checkbox" class="lowercase" id="lowercase" checked>
             </div>
 
             <div class="setting">
                 <label>Include numbers letters</label>
-                <input type="checkbox" class="numbers" checked>
+                <input type="checkbox" class="numbers" id="numbers" checked>
             </div>
 
             <div class="setting">
@@ -106,6 +106,53 @@
             <button id="generate" class="btn-large">Generate Password</button>
         </div>
     </div>
-
 </body>
+<script>
+
+    const result = document.getElementById('result')
+    const lengthEL = document.getElementById('length')
+    const uppercaseEL = document.getElementById('uppercase')
+    const lowercaseEL = document.getElementById('lowercase')
+    const numberEL = document.getElementById('numbers')
+    const generateEL = document.getElementById('generate')
+    const symbolEL = document.getElementById('symbols')
+    const resultEL = document.getElementById('clipboard')
+
+
+    generateEL.addEventListener('click', () => {
+        const length = +lengthEL.value;
+        console.log('length' + length)
+        const haslower = lowercaseEL.checked
+        console.log('haslower' + length)
+        const hasUpper = uppercaseEL.checked
+        console.log('hasUpper' + length)
+        const hasNumber = numberEL.checked
+        console.log('hasNumber' + length)
+        const hasSymbol = symbolEL.checked
+        console.log(hasUpper, haslower, hasNumber, hasSymbol)
+    })
+
+    const randomFunc = {
+            lower: getRandomLower,
+            upper: getRandomUpper,
+            number: getRandomNumber,
+            symbol: getRandomSymbol
+    }
+    function getRandomLower(){
+        return String.fromCharCode(Math.floor(Math.random()*26) + 97)
+    }
+
+    function getRandomUpper(){
+        return String.fromCharCode(Math.floor(Math.random() *26) + 65)
+    }
+
+    function getRandomNumber() {
+        return String.fromCharCode(Math.floor(Math.random()*10) + 48)
+    }
+
+    function getRandomSymbol(){ 
+        const symbols = '!@#$%^&*(){}[]=<>?,.';
+        return symbols[Math.floor(Math.random() * symbols.length)]
+    }
+</script>
 </html>
