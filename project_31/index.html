@@ -121,17 +121,16 @@
 
     generateEL.addEventListener('click', () => {
         const length = +lengthEL.value;
-        console.log('length' + length)
         const haslower = lowercaseEL.checked
-        console.log('haslower' + length)
         const hasUpper = uppercaseEL.checked
-        console.log('hasUpper' + length)
         const hasNumber = numberEL.checked
-        console.log('hasNumber' + length)
         const hasSymbol = symbolEL.checked
-        console.log(hasUpper, haslower, hasNumber, hasSymbol)
-    })
 
+        resultEL.innerHTML = getneratePassword(hasUpper, haslower, hasNumber, hasSymbol, length)
+    })
+    function getneratePassword(upper, lower, number, symbol, length) {
+        let gener = '';  
+    }
     const randomFunc = {
             lower: getRandomLower,
             upper: getRandomUpper,
